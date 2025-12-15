@@ -39,4 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* =========================================
+       3. PRODUCT SIZE SELECTOR
+       ========================================= */
+    const sizeBtns = document.querySelectorAll('.size-btn');
+
+    if (sizeBtns.length > 0) {
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Remove 'active' class from ALL buttons
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                
+                // 2. Add 'active' class to THIS button
+                btn.classList.add('active');
+            });
+        });
+    }
+
 });

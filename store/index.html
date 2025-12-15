@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="../favicon.png">
-<link rel="apple-touch-icon" href="../favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Armory | Successful Faith Store</title>
-    <meta name="description" content="The Armory by Successful Faith. Shop premium Christian apparel, study Bibles, and prayer tools designed for the spiritual warrior.">
-    <meta name="keywords" content="Christian clothing, faith based apparel, study bibles, prayer journals, anointing oil">
-
+    
+    <meta name="description" content="The Armory by Successful Faith. Shop premium Christian apparel, study Bibles, and prayer tools.">
+    <meta name="keywords" content="Christian clothing, faith based apparel, study bibles, prayer journals">
     <meta property="og:title" content="The Armory | Successful Faith Store">
-    <meta property="og:description" content="Equip yourself specifically for the battle. Shop our curated collection.">
+    <meta property="og:description" content="Equip yourself specifically for the battle.">
     <meta property="og:image" content="https://successfulfaith.com/images/store-share.jpg">
+    
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +24,8 @@
 
     <nav class="main-nav">
         <div class="nav-container">
-            
             <a href="/" class="nav-brand">
-                <img src="/logo.webp" alt="Successful Faith" class="nav-logo">
+                <img src="../logo.webp" alt="Successful Faith" class="nav-logo">
             </a>
 
             <div class="menu-toggle" id="mobile-menu">
@@ -35,9 +35,9 @@
             </div>
             
             <div class="nav-links">
-                <a href="/" class="active">Home</a>
+                <a href="/">Home</a>
                 <a href="/blog/">Blog</a>
-                <a href="/store/">Store</a>
+                <a href="/store/" class="active">Store</a>
                 <a href="/about/">About</a>
             </div>
         </div>
@@ -60,7 +60,8 @@
                 <div class="product-info">
                     <h3>"Joshua 1:9" Hoodie</h3>
                     <p class="price">$55.00</p>
-                    <a href="hoodie.html" class="btn-shop">View Details</a>
+                    
+                    <a href="armor-hoodie.html" class="btn-shop">View Details</a>
                 </div>
             </div>
 
@@ -101,7 +102,16 @@
                 <div class="product-info">
                     <h3>ESV Study Bible</h3>
                     <p class="price">$79.99</p>
-                    <button class="btn-shop">Buy on Amazon</button>
+                    <a href="study-bible.html" class="btn-shop">View Details</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image-placeholder">🎧</div>
+                <div class="product-info">
+                    <h3>Audio Wisdom</h3>
+                    <p class="price" style="color: green;">FREE Trial</p>
+                    <a href="audio-wisdom.html" class="btn-shop">Get Offer</a>
                 </div>
             </div>
 
@@ -110,11 +120,32 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Successful Faith. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Successful Faith</h4>
+                <p>Equipping the saints for the work of the ministry.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="/store/">The Armory</a></li>
+                    <li><a href="/blog/">Daily Wisdom</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-links">
+                     <a href="https://instagram.com/successfulfaith" target="_blank" rel="noopener noreferrer" class="social-btn">📷</a>
+                     <a href="https://tiktok.com/@successfulfaith" target="_blank" rel="noopener noreferrer" class="social-btn">🎵</a>
+                     <a href="https://youtube.com/@successfulfaith" target="_blank" rel="noopener noreferrer" class="social-btn">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Successful Faith. All rights reserved.
+        </div>
     </footer>
 
-    <script src="/script.js"></script>
-</body>
-
+    <script src="../script.js"></script>
 </body>
 </html>
