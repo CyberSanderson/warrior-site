@@ -907,3 +907,217 @@ footer {
     color: var(--accent-gold);
     background: rgba(212, 175, 55, 0.1); /* Subtle glow */
 }
+
+/* --- RESET & BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #080C14; /* Deep Midnight Blue */
+    color: #E2E8F0; /* Soft Silver/White */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #FCD34D; /* Candlelight Gold */
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* --- LAYOUT CONTAINER --- */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(252, 211, 77, 0.1);
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #94A3B8;
+    font-style: italic;
+}
+
+/* --- IMAGERY --- */
+.img-frame {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(252, 211, 77, 0.2);
+    overflow: hidden;
+}
+
+.img-frame img {
+    width: 100%;
+    display: block;
+}
+
+/* Placeholder style - remove or ignore if using real image */
+.img-placeholder {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- LINKS & TEXT --- */
+.text-link {
+    text-decoration: none;
+    color: #94A3B8;
+    font-size: 0.9rem;
+    border-bottom: 1px dotted #94A3B8;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: #FCD34D;
+    border-bottom-color: #FCD34D;
+}
+
+/* --- SECTIONS --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.pain-points, .solution, .features {
+    margin-bottom: 4rem;
+    padding: 0 1rem; /* Slight padding for mobile breathing room */
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li::before {
+    content: "•";
+    color: #FCD34D;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+/* --- FEATURES BOX --- */
+.features-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.feature-item {
+    margin-bottom: 1.5rem;
+}
+.feature-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+}
+.feature-item p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    color: #94A3B8;
+}
+
+/* --- CTA SECTION --- */
+.cta {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.secure-text {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #64748B;
+}
+
+/* --- BUTTONS --- */
+.btn-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #FCD34D;
+    border: 1px solid #FCD34D;
+    padding: 1rem 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.btn:hover {
+    background-color: rgba(252, 211, 77, 0.1);
+    box-shadow: 0 0 15px rgba(252, 211, 77, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #475569;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .container { padding: 3rem 1rem; }
+    .features-box { padding: 1.5rem; }
+}
+
+
+

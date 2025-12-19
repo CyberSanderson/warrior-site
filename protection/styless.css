@@ -1,0 +1,285 @@
+/* --- RESET & VARIABLES --- */
+:root {
+  --bg-dark: #080C14;      /* Deep Midnight Blue */
+  --bg-card: #0F1522;      /* Slightly lighter blue for cards */
+  --bg-alt: #05080d;       /* Darker for alternating sections */
+  --text-main: #F1F5F9;    /* Off-white for readability */
+  --text-muted: #94A3B8;   /* Muted blue-grey */
+  --accent-gold: #FCD34D;  /* Holy Gold */
+  --accent-glow: rgba(252, 211, 77, 0.15);
+  
+  --font-head: 'Playfair Display', serif;
+  --font-body: 'Libre Baskerville', serif;
+  
+  --container-width: 1000px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+  font-family: var(--font-head);
+  color: var(--accent-gold);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; margin-bottom: 1.5rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: center; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
+
+p { margin-bottom: 1.5rem; color: var(--text-muted); }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section { padding: 5rem 0; }
+.section.alt { background-color: var(--bg-alt); border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+.section-lead { text-align: center; font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem auto; }
+
+/* --- HEADER --- */
+.site-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand { display: flex; align-items: center; gap: 0.5rem; }
+.brand-mark { color: var(--accent-gold); font-size: 1.2rem; }
+.brand-name { font-family: var(--font-head); font-weight: 700; letter-spacing: 0.5px; }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: #080C14;
+  border: 1px solid var(--accent-gold);
+}
+.btn-primary:hover { background-color: #fff; border-color: #fff; transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+.btn-ghost:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+.btn-secondary {
+  color: var(--text-muted);
+  border-bottom: 1px dotted var(--text-muted);
+  border-radius: 0;
+  padding: 0 0 2px 0;
+  margin-left: 1.5rem;
+}
+.btn-secondary:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+
+.btn-full { width: 100%; }
+
+/* --- HERO SECTION --- */
+.hero { padding: 4rem 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subhead { font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+.hero-cta { margin: 2rem 0; display: flex; align-items: center; }
+
+/* Trust Icons */
+.trust-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
+.trust-item { display: flex; align-items: center; gap: 0.5rem; }
+.trust-icon { color: var(--accent-gold); font-weight: bold; }
+
+.micro-note { font-size: 0.75rem; opacity: 0.6; }
+
+/* Hero Card (Right Side) */
+.hero-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Cover Image / Fallback */
+.cover-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.4; /* Book proportions */
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.cover { width: 100%; height: 100%; object-fit: cover; }
+
+/* Fallback Design (If no image) */
+.cover-fallback {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(252, 211, 77, 0.3);
+}
+
+.cover-fallback-content { text-align: center; padding: 1rem; }
+.cover-title {
+  font-family: var(--font-head);
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--accent-gold);
+  padding: 1rem 0.5rem;
+}
+.cover-sub { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-top: 1rem;}
+
+/* Price Box */
+.price-box { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+.price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1rem; }
+.price-big { font-size: 2rem; font-weight: 700; color: #fff; }
+.price-small { font-size: 0.9rem; text-transform: uppercase; }
+
+.bullets { list-style: none; margin-bottom: 1.5rem; }
+.bullets li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bullets li::before { content: "•"; color: var(--accent-gold); }
+
+.mini-muted { font-size: 0.7rem; text-align: center; margin-top: 0.8rem; }
+
+/* --- GRIDS & CARDS --- */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+.card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+
+/* --- LISTS --- */
+.checklist, .xlist { list-style: none; }
+.checklist li, .xlist li { margin-bottom: 1rem; position: relative; padding-left: 1.8rem; }
+
+.checklist li::before {
+  content: "✓"; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold;
+}
+.xlist li::before {
+  content: "—"; position: absolute; left: 0; color: var(--text-muted);
+}
+
+/* --- QUOTES --- */
+.quote {
+  text-align: center;
+  font-style: italic;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 8px;
+}
+.quote p { font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+.quote-meta { font-size: 0.8rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- FAQ --- */
+.faq { max-width: 700px; margin: 0 auto 3rem auto; }
+details {
+  background: var(--bg-card);
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+summary {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  list-style: none; /* Hide default triangle */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-size: 1.2rem; color: var(--accent-gold); }
+details[open] summary::after { content: "−"; }
+
+details p { padding: 0 1.5rem 1.5rem 1.5rem; margin-bottom: 0; font-size: 0.95rem; }
+
+/* --- FOOTER --- */
+.site-footer {
+  text-align: center;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.8rem;
+  color: #555;
+}
+.footer-note { margin-bottom: 0.5rem; }
+
+.center-cta { text-align: center; margin-top: 3rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-card { max-width: 400px; margin: 0 auto; }
+  .header-inner { flex-direction: column; gap: 1rem; }
+  .btn-secondary { display: block; margin: 1rem 0 0 0; }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+}
+
+.stars {
+  color: #FFD700;        /* Bright Standard Star Yellow */
+  font-size: 1.2rem;     
+  margin-top: 0.5rem;    /* Space between text and stars */
+  margin-bottom: 0.5rem; /* Space between stars and author name */
+  letter-spacing: 2px;
+}
