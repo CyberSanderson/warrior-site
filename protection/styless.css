@@ -283,3 +283,54 @@ details p { padding: 0 1.5rem 1.5rem 1.5rem; margin-bottom: 0; font-size: 0.95re
   margin-bottom: 0.5rem; /* Space between stars and author name */
   letter-spacing: 2px;
 }
+
+/* --- HEADER LOGO FIX --- */
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+}
+
+.nav-brand {
+    display: block;
+    text-decoration: none;
+    line-height: 0; /* Prevents gaps below image */
+}
+
+.nav-logo {
+    height: 50px;        /* Sets a perfect header height */
+    width: auto;         /* Keeps the aspect ratio (doesn't squish it) */
+    display: block;
+    object-fit: contain; /* Ensures the logo fits cleanly */
+}
+
+/* Optional: Make it slightly smaller on mobile phones */
+@media (max-width: 768px) {
+    .nav-logo {
+        height: 40px; 
+    }
+}
+
+/* --- ORIGIN STORY STYLES --- */
+.origin-story {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.origin-story p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    margin-top: 2rem;
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
