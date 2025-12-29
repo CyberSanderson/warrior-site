@@ -18,36 +18,107 @@
     <link rel="stylesheet" href="/styles.css">
 
     <style>
-        /* Specific Styles for the Product Grid */
+        /* --- PRODUCT GRID STYLES --- */
+        .product-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 2rem;
+        }
+
         .product-card {
             background: #111; 
             border: 1px solid rgba(255,255,255,0.1); 
             border-radius: 8px; 
             overflow: hidden; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Needed for the badge */
         }
         
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            border-color: var(--accent-gold);
+            border-color: var(--accent-gold, #d4af37);
         }
 
-        .card-image-wrap {
+        /* --- HOVER SWAP EFFECT --- */
+        .image-container, .card-image-wrap {
             position: relative; 
             aspect-ratio: 1/1; 
             overflow: hidden;
+            background: #000;
         }
 
-        .card-image-wrap img {
+        /* Standard Images */
+        .card-image-wrap img, 
+        .product-img {
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease;
+            transition: opacity 0.3s ease, transform 0.5s ease;
+            display: block;
         }
 
+        /* The Back Image (Hidden by default) */
+        .product-img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Invisible initially */
+            transition: opacity 0.3s ease, transform 0.5s ease;
+            z-index: 2;
+        }
+
+        /* The Hover Trigger */
+        .product-card:hover .product-img-hover {
+            opacity: 1; /* Show back image */
+            transform: scale(1.05);
+        }
+        
+        .product-card:hover .product-img,
         .product-card:hover .card-image-wrap img {
             transform: scale(1.05);
+        }
+
+        /* --- BADGE STYLE --- */
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-gold, #d4af37);
+            color: #000;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            z-index: 10;
+            letter-spacing: 1px;
+        }
+
+        /* --- CARD DETAILS --- */
+        .product-info, .card-details {
+            padding: 1.5rem;
+        }
+
+        .product-info h3, .card-details h3 {
+            font-size: 1.2rem; 
+            margin-bottom: 0.5rem; 
+            color: #fff;
+            font-family: 'Cinzel', serif;
+        }
+
+        .product-price {
+            font-size: 1.1rem; 
+            color: var(--accent-gold, #d4af37); 
+            font-weight: bold;
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: inherit;
         }
 
         .btn-text {
@@ -78,7 +149,7 @@
             
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/store/" class="active">Store</a>
+                <a href="/store/" class="active">The Armory</a>
                 <a href="/prayer-journal/">Journal</a>
                 <a href="/about/">About</a>
             </div>
@@ -94,7 +165,27 @@
     
     <main class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
         
-        <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="product-grid">
+
+            <div class="product-card">
+                <a href="iron-sharpens-iron-t-shirt/" class="product-link">
+                    <div class="image-container">
+                        <img src="iron-sharpens-iron-t-shirt/images/iron-front.webp" alt="Iron Sharpens Iron Tee Front" class="product-img">
+                        <img src="iron-sharpens-iron-t-shirt/images/iron-back.webp" alt="Iron Sharpens Iron Tee Back" class="product-img-hover">
+                        
+                        <div class="badge">Best Seller</div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <h3>Iron Sharpens Iron</h3>
+                        <p style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">Vintage Heavyweight Tee</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <p class="product-price">$38.00</p>
+                            <span class="btn-text">View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
             <div class="product-card">
                 <a href="/store/god-is-my-ceo-t-shirt/">
@@ -102,12 +193,12 @@
                         <img src="/store/ceo-tee-front.webp" alt="God is my CEO Tee">
                     </div>
                 </a>
-                <div class="card-details" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff;">God is my CEO</h3>
+                <div class="card-details">
+                    <h3>God is my CEO</h3>
                     <p style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">Vintage Heavyweight • Faith Over Hustle</p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 1.1rem; color: var(--accent-gold, #d4af37); font-weight: bold;">$34.99</span>
-                        <a href="/store/god-is-my-ceo-t-shirt/" class="btn-text">View Details</a>
+                        <span class="product-price">$34.99</span>
+                        <a href="/store/god-is-my-ceo-t-shirt/" class="btn-text">View</a>
                     </div>
                 </div>
             </div>
@@ -118,12 +209,12 @@
                         <img src="/store/Angel hoodie.webp" alt="Armor of God Hoodie">
                     </div>
                 </a>
-                <div class="card-details" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff;">Full Armor of God</h3>
+                <div class="card-details">
+                    <h3>Full Armor of God</h3>
                     <p style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">Premium Hoodie • Joshua 1:9</p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 1.1rem; color: var(--accent-gold, #d4af37); font-weight: bold;">$55.00</span>
-                        <a href="/store/armor-of-god-hoodie/" class="btn-text">View Details</a>
+                        <span class="product-price">$55.00</span>
+                        <a href="/store/armor-of-god-hoodie/" class="btn-text">View</a>
                     </div>
                 </div>
             </div>
@@ -134,12 +225,12 @@
                         <img src="/prayer-journal/images/journal-cover.webp" alt="30 Day Prayer Journal">
                     </div>
                 </a>
-                <div class="card-details" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff;">30-Day Prayer Journal</h3>
+                <div class="card-details">
+                    <h3>30-Day Prayer Journal</h3>
                     <p style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">Digital & Fillable PDF</p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 1.1rem; color: var(--accent-gold, #d4af37); font-weight: bold;">$15.00</span>
-                        <a href="/prayer-journal/" class="btn-text">View Details</a>
+                        <span class="product-price">$15.00</span>
+                        <a href="/prayer-journal/" class="btn-text">View</a>
                     </div>
                 </div>
             </div>
@@ -150,7 +241,6 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            
             <div class="footer-links" style="margin-bottom: 1rem;">
                 <a href="/policies/refund-policy.html" style="color: #888; text-decoration: none; font-size: 0.9rem; margin-right: 15px;">Refund Policy</a>
                 <a href="/" style="color: #888; text-decoration: none; font-size: 0.9rem;">Home</a>
