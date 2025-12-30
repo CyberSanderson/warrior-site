@@ -183,15 +183,52 @@
     </section>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-links">
-                <a href="/policies/refund-policy/" style="color: #666;">Refund Policy</a>
+    <div class="container footer-inner">
+        
+        <div class="footer-content" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+            
+            <div class="footer-branding" style="flex: 1; min-width: 250px;">
+                <h4 style="color: #fff; margin-bottom: 1rem; font-family: 'Cinzel', serif;">Successful Faith</h4>
+                <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">
+                    Equipping the Saints for the work of ministry.<br>
+                    Est. 2025
+                </p>
+                
+                <div style="margin-top: 1.5rem; border-left: 2px solid var(--accent-gold, #d4af37); padding-left: 1rem;">
+                    <p style="color: #bbb; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        <strong>Location:</strong><br>
+                        New York, NY
+                    </p>
+                    <p style="color: #bbb; font-size: 0.85rem; margin-top: 0.5rem;">
+                        <strong>Support:</strong> <a href="mailto:support@successfulfaith.com" style="color: #fff; text-decoration: underline;">support@successfulfaith.com</a>
+                    </p>
+                </div>
             </div>
-            <p class="footer-note">
-                © <span id="year"></span> Successful Faith.
-            </p>
+
+            <div class="footer-links" style="min-width: 200px;">
+                <h4 style="color: #fff; margin-bottom: 1rem; font-family: 'Cinzel', serif;">Customer Care</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <a href="/policies/refund-policy/" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Refund Policy</a>
+                    <a href="/policies/shipping-policy/" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Shipping Info</a>
+                    <a href="/policies/terms-policy/" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Terms of Service</a>
+                    <a href="/about/" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">About Us</a>
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p class="footer-note" style="color: #666; font-size: 0.8rem; margin: 0;">
+                © <span id="year"></span> Successful Faith™. All rights reserved.
+            </p>
+            <div style="color: #666; font-size: 0.8rem; letter-spacing: 1px;">
+                SECURE CHECKOUT
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
